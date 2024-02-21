@@ -1,0 +1,447 @@
+.main-box{
+    height: 100vh;
+    flex-grow: 1;
+    background-color: rgb(20, 20, 20);
+    position: relative;
+}
+.banner-box{
+    height: 300px;
+    position: relative;
+}
+.banner-box .banner-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100);
+}
+.banner-box .content{
+    overflow: hidden;
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.banner-box .content .content-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #848484;
+    font-size: x-small;
+    font-weight: 500;
+}
+.banner-box .content .content-top i{
+    cursor: pointer;
+}
+.banner-box .content .content-top p span{
+    color: white;
+}
+.banner-box .content .artist{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.banner-box .content .artist .left{
+    display: flex;
+    flex-direction: column;
+}
+.banner-box .content .artist .left span{
+    font-size: xx-small;
+    color: #848484;
+}
+.banner-box .content .artist .left h2{
+    font-size: large;
+}
+.banner-box .content .artist .left span p{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.banner-box .content .artist .right{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.banner-box .content .artist .right a{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 5px 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-small;
+    font-weight: 500;
+    gap: 10px;
+}
+.banner-box .content .artist .right a:first-child{
+    background-color:#e12e73;
+}
+.banner-box .content .artist .right a:last-child{
+    background-color: #0000003f;
+}
+.banner-box .content .artist .right a:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.592);
+}
+.banner-box .bottom-background{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5rem;
+    background-image: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+.main-box .menu-list{
+    background-color: rgb(30, 30, 30);
+    display: flex;
+    padding: 8px 30px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: x-small;
+    font-weight: 500;
+    color: #848484;
+    position: relative;
+    gap: 20px;
+}
+.main-box .menu-list ul{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+.main-box .menu-list ul li a{
+    color: #848484;
+    text-decoration: none;
+}
+.main-box .menu-list ul li{
+    position: relative;
+}
+.main-box .menu-list ul li:before{
+    position: absolute;
+    content: "";
+    bottom: -7px;
+    width: 0;
+    height: 5px;
+    background: #e12e73;
+    border-radius: 5px;
+}
+.main-box .menu-list ul li a:hover,
+.main-box .menu-list ul li.active a{
+    color: white;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.main-box .menu-list ul li:hover::before,
+.main-box .menu-list ul li.active::before{
+    width: 100%;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.main-box .menu-list p{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: white;
+    font-size: 14px;
+}
+.main-box .menu-list p i{
+    font-size: 12px;
+}
+.main-box .menu-list p span{
+    color: #848484;
+    font-size: 10px;
+}
+.audio-list{
+    position: relative;
+    background-color: rgba(43, 43, 43, 0.239);
+    padding: 10px 0px;
+    color: #848484;
+    font-size: xx-small;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100% - 350px);
+    gap: 10px;
+    /*height: calc(100% - 470px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    */
+}
+.audio-list .the-list{
+    display: flex;
+    align-items:end;
+    padding: 0 30px;
+}
+.audio-list .the-list h3{
+    color: white;
+    margin-right: 10px;
+    font-size: small;
+}
+.audio-list .song-container{
+    padding: 0 30px;
+    /*height: 225px;*/
+    height: 77%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    
+}
+.song-container .song-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding:8px 0;
+    cursor: pointer;
+    border-bottom: 1px solid #84848430;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.song-container .song-item:hover{
+    color: white;
+    transform:scale(1.05);
+    
+}
+.song-container .song-item.active{
+    color: white;
+    transition: 0.3s;
+}
+.song-container .song-item .div1{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.song-container .song-item .div3{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.song-container .song-item .div3 span{
+    display: flex;
+    gap: 5px;
+    align-items: end;
+}
+.song-container .song-item .div3 span i{
+    font-size: 10px;
+}
+.song-container .song-item .div3 .like{
+    font-size: 14px;
+    color: #e12e73;
+}
+.song-container .song-item .div1 img{
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    min-width: 40px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.main-box .playing-song{
+    background-color:rgb(30,30,30);
+    box-shadow: 0px 0px 2px rgb(59, 59, 59);
+    padding: 20px 30px;
+    color: #848484;
+    font-size: xx-small;
+    display: flex;
+    gap: 20px;
+    
+    /*position: absolute;*/
+    width: calc(100% - 60px);
+    /*bottom: 0;
+    left: 0;
+    right: 0;
+    /*height: 70px;
+    min-height: 70px;
+    */
+}
+.main-box .playing-song img{
+    height: 70px;
+    width: 70px;
+    min-height: 70px;
+    min-width: 70px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.main-box .playing-song .playing-song-detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+.main-box .playing-song .playing-song-detail .top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-box .playing-song .playing-song-detail .top div{
+    display: flex;
+    gap: 15px;
+}
+.main-box .playing-song .playing-song-detail .top i{
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.main-box .playing-song .playing-song-detail .top i:hover{
+    color: white;
+    transform: scale(1.1);
+}
+.main-box .playing-song .playing-song-detail .top .heart{
+    color: #e12e73;
+}
+.main-box .playing-song .playing-song-detail .top .heart:hover{
+    color: #e12e73;
+    transform: scale(1.3);
+}
+.main-box .playing-song .playing-song-detail .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+.main-box .playing-song .playing-song-detail .bottom input{
+    width: 80%;
+    cursor: pointer;
+    appearance: none;
+    border-radius: 5px;
+    height: 2px;
+    background: rgba(255,255,255,0.1);
+    position: relative;
+}
+.main-box .playing-song .playing-song-detail .bottom input:before{
+    content: " ";
+    background: #e12e73;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--player-played);
+    border-radius: 5px;
+    z-index: 2;
+    transition: width 250ms linear;
+}
+.main-box .playing-song .playing-song-detail .bottom input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    /*background: #848484;*/
+    height: 10px;
+    width: 4px;
+    z-index: 3;
+    position: relative;
+    transition: all 250ms linear;
+    
+}
+@media only screen and (max-width:900px){
+    .banner-box .content .artist .right{
+        flex-direction: column;
+        gap: 8px;
+        align-items: end;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .main-box .menu-list p{
+        display:none;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .song-container .song-item .div3 span:first-child{
+        display: none;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }/*
+    .song-container .song-item .div2{
+        display: none;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }*/
+}/*
+@media only  screen and (max-height:680px){
+    .banner-box{
+        height: 200px;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .audio-list{
+        height: calc(100% - 257px);
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    .audio-list .song-container{
+        height: 171px; 
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+}/*
+@media only  screen and (max-height:583px){
+    .audio-list .song-container{
+        height: 116px;
+        transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+}
+@media only  screen and (max-height:524px){
+    .main-box{
+        overflow-y: scroll;
+    }
+    .audio-list{
+        height: 268px;
+    }
+}*/
+/* phone*/
+@media only screen and (max-width:500px){
+    
+    .main-box .menu-list{
+        font-size: xx-small;
+    }
+    .main-box .audio-list .the-list h3{
+        font-size: x-small;
+    }
+    .banner-box .content,
+    .audio-list .the-list,
+    .main-box .menu-list,
+    .main-box .song-container,
+    .main-box .playing-song
+    {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .main-box .playing-song{
+        width: calc(100% - 32px);
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .main-box .playing-song img{
+        height: 50px;
+        width: 50px;
+        min-height: 50px;
+        min-width: 50px;
+    }
+    .banner-box .content .artist .right a{
+        font-size: xx-small;
+    }
+    .song-container .song-item .div1 .song-item-info
+    {
+        width: 100px;
+        height: 30px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+   }
+}
+@media only screen and (max-width:300px){
+    .song-container .song-item .div1 .song-item-info
+    {
+        width: 50px;
+        height: 20px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+   }
+   .song-container .song-item .div3 span{
+    display: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+   .main-box .menu-list ul{
+    gap: 6px;
+   }
+   .banner-box .content .artist .left span {
+    display: none;
+   }
+}

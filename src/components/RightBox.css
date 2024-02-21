@@ -1,0 +1,13 @@
+.right-box{
+    background-color: rgb(20, 20, 20);
+    height:  100vh;
+    width: 100px;
+    min-width: 100px;
+    border-left: 1px solid rgb(29, 29, 29);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@media only screen and (max-width:450px){
+    .right-box{
+        display: none;
+    }
+}

@@ -1,0 +1,17 @@
+/* to hide scroll bar in entire body*/
+*{
+  margin: 0;
+  padding: 0;
+}
+*::-webkit-scrollbar {
+    display: none;
+  }
+.app{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    background-color: black;
+   
+}

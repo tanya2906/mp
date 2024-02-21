@@ -1,0 +1,241 @@
+.left-box{
+    background-color: rgb(20, 20, 20);
+    width: 240px;
+    height: 100%;
+    min-height: 100vh;
+    padding: 25px 30px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.logo-container{
+    color: white;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo-container i{
+    font-size: 20px;
+}
+.search-container{
+    display: flex;
+    position: relative;
+    color: #848484;
+    margin-top: 40px;
+    height: 35px;
+
+}
+.search-container input{
+    padding: 5px;
+    padding-left: 30px;
+    width: 100%;
+    height: 100%;
+    background-color: #272727;
+    color: #848484;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px #303030;
+}
+.search-container i{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
+.menu-box{
+    color: #848484;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.menu-box .title{
+    font-weight: 500;
+    font-size: xx-small;
+    text-transform: uppercase;
+}
+.menu-box ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.menu-box ul li{
+    font-weight: 500;
+    font-size: small;
+    position: relative;
+}
+.menu-box ul li a{
+    color:#848484;
+    text-decoration: none;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.menu-box ul li:before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -29px;
+    width: 0px;
+    height: 100%;
+    background: #e12e73;
+    border-radius: 5px;
+}
+.menu-box ul li:hover::before,
+.menu-box ul li.active::before{
+    width: 5px;
+    transition: 0.3s;
+}
+.menu-box ul li:hover a,
+.menu-box ul li.active a{
+    color: #fff;
+    transition: 0.3s;
+}
+.playlist-box{
+    color: #848484;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+.playlist-container-name{
+    font-weight: 500;
+    font-size: xx-small;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.playlist-container-name i{
+    cursor: pointer;
+    font-size: small;
+    color: #ffffff;
+}
+.playlist-list{
+   
+    font-weight: 500;
+    font-size: small;
+}
+.playlist-list ul{
+    list-style: none;
+    max-height: 125px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.playlist-list ul li{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    cursor: pointer;
+    
+}
+.playlist-list ul li:hover{
+    color: #ffffff;
+    transition: 0.3s;
+}
+.track-box{
+    color: #848484;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.track-box .top{
+    display: flex;
+    gap: 15px;
+}
+.track-box .top span{
+    display: flex;
+    flex-direction: column;
+    gap: -5px;
+}
+.track-box .top span h3{
+    font-size: medium;
+    color: #ffffff;
+}
+.track-box .top span p{
+    font-size: smaller;
+}
+.track-box .top img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.track-box .bottom{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.track-box .bottom i{
+    cursor: pointer;
+}
+ 
+.track-box .bottom i:hover{
+    color: #ffffff;
+    transition: 0.3s;
+}
+.track-box .bottom input{
+    cursor: pointer;
+    width: 70%;
+    height: 3px;
+    border-radius: 5px;
+    position: relative;
+    appearance: none;
+    background: #272727;
+}
+/*for chrome */
+.track-box .bottom input::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background: #e12e73;
+    height: 100%;
+    width: 50%;
+    border-radius: 10px;
+    z-index: 2;
+    transition: width 250ms linear;
+}
+.track-box .bottom input::-webkit-slider-thumb{
+    -webkit-appearance:none;
+    height: 15px;
+    width: 4px;
+    background: #8d8d8d;
+    z-index: 3;
+    position: relative;
+    transition: all 250ms linear;
+}
+@media only screen and (max-width:760px){
+    .left-box{
+        width: 50px;
+        min-width: 50px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .search-container,
+    .track-box,
+    .playlist-box,
+    .menu-box span,
+    .title, .logo-container h1,
+    .logo-container i:last-child{
+        display: none;
+    }
+    .logo-container i,
+    .menu-box i{
+        font-size: large;
+    }
+    .logo-container,
+    .menu-box  ul li a {
+        justify-content: center;
+    }
+    .menu-box ul li:before{
+        left: 0;
+    }
+}
