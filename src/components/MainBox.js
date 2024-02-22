@@ -3,7 +3,7 @@ import '../components/MainBox.css';
 import { BannerBox } from './BannerBox';
 import {FaEye,FaHeart,FaShareAlt,FaPlay,FaPause,FaForward,FaStepForward,FaBackward,FaStepBackward} from 'react-icons/fa';
 import { AudioList } from './AudioList';
-function MainBox({searchvalue}) {
+function MainBox({playlist,pageName,searchvalue,artist,setArtist}) {
   
   useEffect(()=>
     {
@@ -20,7 +20,7 @@ function MainBox({searchvalue}) {
   );
   return (
     <div className='main-box'>
-      <BannerBox/>
+      <BannerBox pageName={pageName} artist={artist} />
       <div className='menu-list'>
         <ul>
           <li><a href='#'>Popular</a></li>
@@ -31,7 +31,7 @@ function MainBox({searchvalue}) {
         </ul>
         <p><i><FaEye/></i>12.3M <span>Followers</span></p>
       </div>
-      <AudioList searchvalue={searchvalue}/>
+      <AudioList searchvalue={searchvalue} pageName={pageName} playlist={playlist}/>
       {/*<div className='playing-song '>
         <img src="music.jpeg" alt="img" />
         <div className='playing-song-detail'>

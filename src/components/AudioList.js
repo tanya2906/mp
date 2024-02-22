@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import {FaHeadphones,FaClock,FaRegHeart,FaHeart} from 'react-icons/fa';
 import {Songs} from './Songs';
 import { MusicPlayer } from './MusicPlayer';
-function AudioList({searchvalue}) {
-    const [like,setLike]=useState(Songs[0].favourite);
+function AudioList({searchvalue,pageName,playlist}) {
+    
     const [songs,setSongs]=useState(Songs);
+    const [like,setLike]=useState(Songs[0].favourite);
     const [song,setSong]=useState(Songs[0].song);
     const [img,setImg]=useState(Songs[0].imgSrc)
     const [id,setId]=useState(Songs[0].id)
@@ -23,12 +24,34 @@ function AudioList({searchvalue}) {
     useEffect(
         ()=>{
             setSongs(
-                songs.filter((e)=>{if(e.songName.includes(searchvalue)||e.artist.includes(searchvalue))
-                return e;
+                Songs.filter((e)=>{if(e.songName.toLowerCase().includes(searchvalue.toLowerCase())||e.artist.toLowerCase().includes(searchvalue.toLowerCase()))
+                {
+                    return e;
+                }
                 })
             )
-            console.log(songs)
-        },[searchvalue])
+            if(songs!=''){
+                setLike(songs[0].favourite);
+                setSong(songs[0].song);
+                setImg(songs[0].imgSrc);
+                setId(songs[0].id);
+            }
+            //console.log(songs)
+        },[searchvalue]);
+    useEffect(()=>{
+        setSongs(
+            Songs.filter((e)=>{if(e.category.toLowerCase().includes(playlist.toLowerCase()))
+               return e;
+            })
+            
+        )
+        if(songs!=''){
+            setLike(songs[0].favourite);
+            setSong(songs[0].song);
+            setImg(songs[0].imgSrc);
+            setId(songs[0].id);
+        }
+    },[playlist]);
     const changeFavourite=(id)=>{
         Songs.forEach(e=>{
             if (e.id == id) 
@@ -44,38 +67,37 @@ function AudioList({searchvalue}) {
         setLike(songlike);
         setId(songId);
         
-        
     }
     const NEXT=()=>{
-        if(id===Songs.length ){
+        if(id===songs.length ){
             setId(1);
         }
         else{
             setId(id+1);
             
         }
-        setImg(Songs[id-1].imgSrc);
-        setSong(Songs[id-1].song);
-        setLike(Songs[id-1].favourite);
+        setImg(songs[id-1].imgSrc);
+        setSong(songs[id-1].song);
+        setLike(songs[id-1].favourite);
         
     }
     const PREVIOUS=()=>{
         if(id===1){
-            setId(Songs.length);
+            setId(songs.length);
         }
         else{
             setId(id-1);
         }
-        setImg(Songs[id-1].imgSrc);
-        setSong(Songs[id-1].song);
-        setLike(Songs[id-1].favourite);
+        setImg(songs[id-1].imgSrc);
+        setSong(songs[id-1].song);
+        setLike(songs[id-1].favourite);
         
     }
   return (
     <div className='audio-list'>
       <div className='the-list'>
         <h3>The list</h3>
-        <p><span>{`${Songs.length}`}</span> Songs </p>
+        <p><span>{`${songs.length}`}</span> Songs </p>
       </div>
       <div className='song-container'>
         {

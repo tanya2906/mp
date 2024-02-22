@@ -22,6 +22,10 @@ const PlaylistList=[
     {
         id:6,
         name:'Workout'
+    },
+    {
+        id:7,
+        name:'Punjabi'
     }
 ];
 export {PlaylistList};

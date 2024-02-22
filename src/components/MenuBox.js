@@ -1,6 +1,6 @@
 import React,{ useEffect } from 'react'
 
-function MenuBox({title,object}) {
+function MenuBox({title,object,setPageName}) {
   useEffect(()=>{
     const activeItem=document.querySelectorAll('.menu-box ul li');
     function changeActive(){
@@ -8,6 +8,7 @@ function MenuBox({title,object}) {
             element.classList.remove("active")
         ));
         this.classList.add('active');
+        setPageName(this.innerText)
     }
     activeItem.forEach((element) => element.addEventListener("click",changeActive));
   },[]);

@@ -136,7 +136,9 @@
     cursor: pointer;
     
 }
-.playlist-list ul li:hover{
+
+.playlist-list ul li:hover,
+.playlist-list ul li.Active {
     color: #ffffff;
     transition: 0.3s;
 }

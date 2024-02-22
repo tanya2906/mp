@@ -6,7 +6,7 @@ import { MenuBox } from './MenuBox';
 import { MenuList } from './MenuList';
 import { PlaylistBox } from './PlaylistBox';
 import { TrackBox } from './TrackBox';
-function LeftBox({searchvalue,setSearchvalue}) {
+function LeftBox({artist,setArtist,pageName,setPageName,searchvalue,setSearchvalue,setPlaylist}) {
   const search=useRef();
   const changeSearch=(e)=>{
       setSearchvalue(e.target.value);
@@ -22,8 +22,8 @@ function LeftBox({searchvalue,setSearchvalue}) {
         <i><IoIosSearch/></i>
         <input type="text" value={searchvalue} name='search' placeholder='Search' ref={search} onChange={changeSearch}/>
       </div>
-      <MenuBox title="Menu" object={MenuList}/>
-      <PlaylistBox/>
+      <MenuBox title="Menu" object={MenuList}  setPageName={setPageName}/>
+      <PlaylistBox setPlaylist={setPlaylist} setArtist={setArtist}/>
       <TrackBox/>
     </div>
   )
