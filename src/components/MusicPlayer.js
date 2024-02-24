@@ -51,11 +51,13 @@ function MusicPlayer({play,setPlay,id,setId,song,setSong,img,setImg,like,setLike
         setLike(!like)
         setSongs([...Songs]);
     }
-    const changePlay=()=>{
-        
+    const changePlay=async ()=>{
+        console.log("I am triggered");
         if(!play)
         {
-            audioPlayer.current.play();
+        await  audioPlayer.current.load();
+        console.log("i am being played")
+          audioPlayer.current.play();
             play_pause.current=requestAnimationFrame(whilePlaying);
         }
         else{
@@ -65,38 +67,73 @@ function MusicPlayer({play,setPlay,id,setId,song,setSong,img,setImg,like,setLike
         setPlay(!play);
         
     }
-    const nextSong=()=>{
-      NEXT();
+    const nextSong=async()=>{
+     await audioPlayer.current.pause(); // Pause the current song
+    audioPlayer.current.currentTime = 0; // Reset the current time
+    audioPlayer.current.src = ''; // Clear the current source
+    NEXT(); // Load the next song
+      await new Promise((resolve) => {
+        audioPlayer.current.addEventListener("loadeddata", resolve, {
+          once: true,
+        });
+      }); // Load the new song
+    audioPlayer.current.play(); // Play the new song
+    setPlay(true); // Set play state to true
       
     }
     const previousSong=()=>{
       PREVIOUS();
     }
-  return (
     
-    <div className='playing-song '>
-        <img src={img} alt="img" />
-        <audio src={song} ref={audioPlayer} id='audioplaying'/>
-        <div className='playing-song-detail'>
-          <div className='top'>
-            <i className='heart' onClick={()=>changeLove()}>{like?<FaHeart/>:<FaRegHeart/>}</i>
-            <div>
-              <i><FaStepBackward onClick={()=>previousSong()}/></i>
-              <i><FaBackward/></i>
-              <i onClick={()=>changePlay()}>{play?<FaPause/>:<FaPlay/>}</i>
-              <i><FaForward/></i>
-              <i><FaStepForward onClick={()=>nextSong()}/></i>
-            </div>
-            <i><FaShareAlt /></i>
+  return (
+    <div className="playing-song ">
+      <img src={img} alt="img" />
+      <audio
+        src={song}
+        ref={audioPlayer}
+        id="audioplaying"
+        onEnded={()=>nextSong()}
+      />
+      <div className="playing-song-detail">
+        <div className="top">
+          <i className="heart" onClick={() => changeLove()}>
+            {like ? <FaHeart /> : <FaRegHeart />}
+          </i>
+          <div>
+            <i>
+              <FaStepBackward onClick={() => previousSong()} />
+            </i>
+            <i>
+              <FaBackward />
+            </i>
+            <i onClick={() => changePlay()}>
+              {play ? <FaPause /> : <FaPlay />}
+            </i>
+            <i>
+              <FaForward />
+            </i>
+            <i>
+              <FaStepForward onClick={() => nextSong()} />
+            </i>
           </div>
-          <div className='bottom'>
-            <p>{isNaN(currentTime)?`00:00`:calculateTime(currentTime)}</p>
-            <input type="range" name="" id="" ref={progressBar} onChange={changeProgress}/>
-            <p>{isNaN(duration)?`00:00`:calculateTime(duration)}</p>
-          </div>
+          <i>
+            <FaShareAlt />
+          </i>
+        </div>
+        <div className="bottom">
+          <p>{isNaN(currentTime) ? `00:00` : calculateTime(currentTime)}</p>
+          <input
+            type="range"
+            name=""
+            id=""
+            ref={progressBar}
+            onChange={changeProgress}
+          />
+          <p>{isNaN(duration) ? `00:00` : calculateTime(duration)}</p>
         </div>
       </div>
-  )
+    </div>
+  );
 }
 
 export {MusicPlayer}

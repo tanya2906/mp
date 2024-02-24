@@ -76,12 +76,14 @@ function AudioList({searchvalue,pageName,playlist}) {
         else{
             setId(id+1);
             
+            
         }
-        setImg(songs[id-1].imgSrc);
-        setSong(songs[id-1].song);
-        setLike(songs[id-1].favourite);
+        setImg(songs[id+1].imgSrc);
+        setSong(songs[id+1].song);
+        setLike(songs[id+1].favourite);
         
     }
+    console.log("Id",id)
     const PREVIOUS=()=>{
         if(id===1){
             setId(songs.length);
