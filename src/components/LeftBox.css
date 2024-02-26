@@ -200,7 +200,7 @@
     left: 0;
     background: #e12e73;
     height: 100%;
-    width: 50%;
+    width: var(--volume-range);
     border-radius: 10px;
     z-index: 2;
     transition: width 250ms linear;

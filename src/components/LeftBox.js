@@ -6,7 +6,7 @@ import { MenuBox } from './MenuBox';
 import { MenuList } from './MenuList';
 import { PlaylistBox } from './PlaylistBox';
 import { TrackBox } from './TrackBox';
-function LeftBox({artist,setArtist,pageName,setPageName,searchvalue,setSearchvalue,setPlaylist}) {
+function LeftBox({setVolume,artist,setArtist,pageName,setPageName,searchvalue,setSearchvalue,setPlaylist}) {
   const search=useRef();
   const changeSearch=(e)=>{
       setSearchvalue(e.target.value);
@@ -24,7 +24,7 @@ function LeftBox({artist,setArtist,pageName,setPageName,searchvalue,setSearchval
       </div>
       <MenuBox title="Menu" object={MenuList}  setPageName={setPageName}/>
       <PlaylistBox setPlaylist={setPlaylist} setArtist={setArtist}/>
-      <TrackBox/>
+      <TrackBox artist={artist} setVolume={setVolume}/>
     </div>
   )
 }

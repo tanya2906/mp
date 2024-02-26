@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useRef } from 'react';
 import {FaHeart,FaRegHeart,FaShareAlt,FaPlay,FaPause,FaForward,FaStepForward,FaBackward,FaStepBackward} from 'react-icons/fa';
-function MusicPlayer({play,setPlay,id,setId,song,setSong,img,setImg,like,setLike,setSongs,Songs,NEXT,PREVIOUS}) {
+function MusicPlayer({volume,setflag,flag,play,setPlay,id,setId,song,setSong,img,setImg,like,setLike,setSongs,Songs,NEXT,PREVIOUS}) {
     const audioPlayer=useRef();
     const progressBar=useRef();
     const play_pause=useRef();
@@ -9,11 +9,32 @@ function MusicPlayer({play,setPlay,id,setId,song,setSong,img,setImg,like,setLike
     const [duration, setDuration]=useState(0);
     const [currentTime, setCurrentTime] = useState(0);
     
+    
+    /*useEffect(()=>{
+      if(flag===1)
+      {
+        document.querySelector('audio').setAttribute('autoplay',true);
+        setPlay(true);
+        play_pause.current=requestAnimationFrame(whilePlaying);
+      }
+      
+    },[flag])
+    */
     useEffect(()=>{
       const sec=Math.floor(audioPlayer.current.duration);
         setDuration(sec)
         progressBar.current.max=sec;
-    },[audioPlayer?.current?.loadedmetada, audioPlayer?.current?.readyState]);
+        play_pause.current=requestAnimationFrame(whilePlaying);
+      if(flag===1)
+      {
+        document.querySelector('audio').setAttribute('autoplay',true);
+        setPlay(true);
+        //play_pause.current=requestAnimationFrame(whilePlaying);
+      }
+      console.log(volume)
+      audioPlayer.current.volume=volume;
+      console.log(audioPlayer.current.volume)
+    },[audioPlayer?.current?.loadedmetada, audioPlayer?.current?.readyState,flag,volume]);
    
     const whilePlaying=()=>{
       progressBar.current.value=audioPlayer.current.currentTime;
@@ -52,18 +73,23 @@ function MusicPlayer({play,setPlay,id,setId,song,setSong,img,setImg,like,setLike
         setSongs([...Songs]);
     }
     const changePlay=()=>{
-        
-        if(!play)
+        const p=play;
+        if(!p)
         {
             audioPlayer.current.play();
             play_pause.current=requestAnimationFrame(whilePlaying);
         }
         else{
             audioPlayer.current.pause();
+            setflag(0);
             cancelAnimationFrame(play_pause.current);
         }
         setPlay(!play);
         
+    }
+    const autoNext=()=>{
+      NEXT();
+      
     }
     const nextSong=()=>{
       NEXT();
@@ -76,7 +102,7 @@ function MusicPlayer({play,setPlay,id,setId,song,setSong,img,setImg,like,setLike
     
     <div className='playing-song '>
         <img src={img} alt="img" />
-        <audio src={song} ref={audioPlayer} id='audioplaying'/>
+        <audio controls  src={song} ref={audioPlayer} onEnded={autoNext} id='audioplaying'/>
         <div className='playing-song-detail'>
           <div className='top'>
             <i className='heart' onClick={()=>changeLove()}>{like?<FaHeart/>:<FaRegHeart/>}</i>

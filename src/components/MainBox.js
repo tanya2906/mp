@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import '../components/MainBox.css';
 import { BannerBox } from './BannerBox';
 import {FaEye,FaHeart,FaShareAlt,FaPlay,FaPause,FaForward,FaStepForward,FaBackward,FaStepBackward} from 'react-icons/fa';
 import { AudioList } from './AudioList';
-function MainBox({playlist,pageName,searchvalue,artist,setArtist}) {
-  
+function MainBox({volume,playlist,pageName,searchvalue,artist,setArtist}) {
+  const [flag,setflag]=useState(0);
+  const [type,setType]=useState('all');
   useEffect(()=>
     {
       const active_item=document.querySelectorAll(".main-box .menu-list ul li");
@@ -18,20 +19,31 @@ function MainBox({playlist,pageName,searchvalue,artist,setArtist}) {
     },
     []
   );
+  const popular=()=>{
+    setType('popular')
+  }
+  const all=()=>{
+    setType('all')
+  }
+  const like=()=>{
+    setType('like')
+  }
   return (
     <div className='main-box'>
-      <BannerBox pageName={pageName} artist={artist} />
+      <BannerBox pageName={pageName} artist={artist} setflag={setflag}/>
       <div className='menu-list'>
         <ul>
-          <li><a href='#'>Popular</a></li>
-          <li><a href='#'>Albums</a></li>
-          <li><a href='#'>Songs</a></li>
-          <li><a href='#'>Fans</a></li>
-          <li><a href='#'>About</a></li>
+          <li><a href='#' onClick={popular}>Popular</a></li>
+          {/*<li><a href='#'>Albums</a></li>*/}
+          <li><a href='#' onClick={all}>Songs</a></li>
+          <li><a href='#' onClick={like}>Like{/*Fans*/}</a></li>
+          {/*<li><a href='#'>About</a></li>*/}
         </ul>
-        <p><i><FaEye/></i>12.3M <span>Followers</span></p>
+        <p>
+          {/*<i><FaEye/></i>12.3M <span>Followers</span>*/}
+        </p>
       </div>
-      <AudioList searchvalue={searchvalue} pageName={pageName} playlist={playlist}/>
+      <AudioList volume={volume} type={type} flag={flag} setflag={setflag} searchvalue={searchvalue} pageName={pageName} playlist={playlist}/>
       {/*<div className='playing-song '>
         <img src="music.jpeg" alt="img" />
         <div className='playing-song-detail'>

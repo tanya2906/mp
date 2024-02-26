@@ -15,10 +15,10 @@ const PlaylistList=[
         id:4,
         name:'Trance'
     },
-    {
+    /*{
         id:5,
         name:'Instrumental Music'
-    },
+    },*/
     {
         id:6,
         name:'Workout'

@@ -4,6 +4,9 @@
     background-color: rgb(20, 20, 20);
     position: relative;
 }
+audio{
+   width: 0px; 
+}
 .banner-box{
     height: 300px;
     position: relative;
@@ -87,6 +90,15 @@
 }
 .banner-box .content .artist .right a:first-child{
     background-color:#e12e73;
+}
+.banner-box .content .artist .right a:first-child:hover{
+    background-color: #0000005f;
+    color: rgba(255, 255, 255, 0.681);
+}
+.banner-box .content .artist .right a:first-child.play{
+
+    background-color: #0000005f;
+    
 }
 .banner-box .content .artist .right a:last-child{
     background-color: #0000003f;

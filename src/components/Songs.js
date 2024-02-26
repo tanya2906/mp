@@ -265,12 +265,333 @@ const Songs = [
       },{
         id: ,
         favourite: false,
-        songName: "",
+        songName: "Elevated",
         artist: "",
-        song: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FElevated.mp3?alt=media&token=b838d210-d3d4-4319-bda6-43d527059cce",
         imgSrc:"",
         category:""
       },{
+        id: ,
+        favourite: false,
+        songName: "Excuses",
+        artist: "",
+        song: "",
+        imgSrc:"https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FExcuses.mp3?alt=media&token=36df8511-f73c-4e45-9e5d-a1743c70f2ec",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Ghost",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FGhost.mp3?alt=media&token=d06d3047-d7a1-45d6-b82c-a2f5dbaeb909",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Girl I Love You",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FGirl%20I%20Love%20You.mp3?alt=media&token=077d16be-45e3-4257-9d3c-8568b32903a8",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Hass Hass",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FHass%20Hass.mp3?alt=media&token=cad86b09-d9ac-49f1-b03d-1f8568dea9e0",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Ice",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FIce.mp3?alt=media&token=3ee5d095-a15a-4ce7-a6c2-9e3c82126431",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Insane",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FInsane.mp3?alt=media&token=ae00e1a6-7e39-4ef1-a0e6-bca94667274e",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Jatt Da Kaleja",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FJatt%20Da%20Kaleja.mp3?alt=media&token=4f2db969-bd0d-4af8-8c89-2bed6de8d341",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Jatt Vailly",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FJatt%20Vailly.mp3?alt=media&token=1d941ca9-81ac-4079-acfe-5edb5c82327f",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Jee Ni Lagda",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FJee%20Ni%20Lagda.mp3?alt=media&token=eee92d03-5025-4c43-ae6d-97285c7f16ed",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Jeena Shikhaya",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FJeena%20Sikhaya.mp3?alt=media&token=1cff42f1-6e87-4579-9375-cb892357e658",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Khushiyaan bator Lo Shaitaan",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FKhushiyaan%20Bator%20Lo%20Shaitaan.mp3?alt=media&token=35f8b745-4c7f-48db-abc5-f3fbe4ea8c1a",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Ki Banu Duniya Da",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FKi%20Banu%20Duniya%20Da.mp3?alt=media&token=4af3aa42-2087-4203-bab0-df3752acb23d",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Ki Samjhaiye",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FKi%20Samjhaiye.mp3?alt=media&token=80aabbab-4a25-4c32-a2a5-01d0f9973269",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Lak 28 Kudi da",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FLak%2028%20Kudi%20Da.mp3?alt=media&token=e9f997d7-12ce-4f0e-ab1f-f4b64b3bd64a",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Lalkara",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FLalkara.mp3?alt=media&token=64659392-1384-428d-bbf8-363c4e075f0f",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Ma Belle",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FMa%20Belle.mp3?alt=media&token=a18509a8-6df4-4354-94e9-b84cbfd5a9fc",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Mera deewanapan",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FMera%20Deewanapan.mp3?alt=media&token=021b2de8-653c-47d2-b439-4cc1d18b3c76",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "No Love",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FNo%20Love.mp3?alt=media&token=d9fbb397-f934-4907-ae54-0bf0cefe2021",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "OG",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FOG.mp3?alt=media&token=a4ea20db-a898-40a4-8974-d05e77ff95ff",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "One Love",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FOne%20Love.mp3?alt=media&token=12fe30a1-9801-445c-a71d-82a2058ad213",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Pendu",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FPendu.mp3?alt=media&token=ad863b8d-31bd-4655-bfa8-1654d4f30b17",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Proper Patola",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FPendu.mp3?alt=media&token=ad863b8d-31bd-4655-bfa8-1654d4f30b17",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Qismat",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FQismat.mp3?alt=media&token=a67ccd8c-33e3-4008-9984-82b0cece6bfa",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Record Bolde",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FRecord%20Bolde.mp3?alt=media&token=ee82dfd9-e037-4fd5-8c98-1830af57d243",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Sochan Vich Tu",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FSochan%20Vich%20Tu.mp3?alt=media&token=b1f1bddc-a911-4632-85f1-4c0eff321873",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Softly",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FSoftly%20-%20DjPunjab.Com.Se.mp3?alt=media&token=f78ae22e-f985-4679-8c20-9bb8991922b5",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Still Rollin ",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FStill%20Rollin.mp3?alt=media&token=832c638d-2b76-4280-99b1-1cc24fa130a3",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Summer High",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FSummer%20High.mp3?alt=media&token=8fe512e4-0883-42b2-9bd8-c22f5540955e",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Supna",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FSupna.mp3?alt=media&token=7ebd2e92-fca4-4888-b514-60897af098ba",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Taara",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FTaara.mp3?alt=media&token=9a5abfaa-5792-45ab-be46-8c04544a6607",
+        imgSrc:"",
+        category:""
+      },{
+        id: ,
+        favourite: false,
+        songName: "Takeover",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FTakeover.mp3?alt=media&token=d0b78728-71e0-4fa1-bb1b-e47471845ca5",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "Toxic",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FToxic.mp3?alt=media&token=0ec0071f-13b4-43d7-adba-d9a5b60f4e6c",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "Try Me",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FTry%20Me.mp3?alt=media&token=a05ae0db-3b62-4280-8d0f-3337429513da",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "Tu Judda",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FTu%20Judda.mp3?alt=media&token=f90fe183-72f0-4043-a024-de87a0347c5c",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "vail",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FVail.mp3?alt=media&token=b5c3d8aa-1a6c-48fd-9e42-3b9547cfc29b",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "We Rollin",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FWe%20Rollin.mp3?alt=media&token=bbcfbaad-dd29-4f92-9587-ad8dac21cf95",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "With You",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FWith%20You.mp3?alt=media&token=358cd810-5211-4e0f-a398-c628ae1b8d2d",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "Yaarian",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FYaarian.mp3?alt=media&token=d2c8ed8d-e311-4198-bac1-016041b9869c",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "Zindabaad Yaarian",
+        artist: "",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FZindabaad%20Yaarian.mp3?alt=media&token=229ae8fb-bfbb-4d58-bdba-c7c87f97f889",
+        imgSrc:"",
+        category:""
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -278,7 +599,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -286,7 +608,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -294,7 +617,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -302,7 +626,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -310,7 +635,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -318,7 +644,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -326,7 +653,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -334,7 +662,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -342,7 +671,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -350,7 +680,8 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },{
+      },
+      {
         id: ,
         favourite: false,
         songName: "",
@@ -358,7 +689,53 @@ const Songs = [
         song: "",
         imgSrc:"",
         category:""
-      },*/
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "",
+        artist: "",
+        song: "",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "",
+        artist: "",
+        song: "",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "",
+        artist: "",
+        song: "",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "",
+        artist: "",
+        song: "",
+        imgSrc:"",
+        category:""
+      },
+      {
+        id: ,
+        favourite: false,
+        songName: "",
+        artist: "",
+        song: "",
+        imgSrc:"",
+        category:""
+      },
+      */
   ];
   
   export { Songs };

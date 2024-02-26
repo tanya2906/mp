@@ -1,8 +1,11 @@
 import React from 'react'
 import {IoIosMore} from 'react-icons/io';
 import {FaHeadphones,FaCheck} from 'react-icons/fa';
-function BannerBox({pageName,artist}) {
-  
+function BannerBox({pageName,artist,setflag}) {
+  const play=()=>{
+    document.querySelector('.banner-box .content .artist .right a:first-child').classList.add('play');
+    setflag(1);
+  }
   return (
     <div className='banner-box'>
       <img src="music.jpeg" alt="banner img" className='banner-img'/>
@@ -21,8 +24,8 @@ function BannerBox({pageName,artist}) {
                 */}
             </div>
             <div className='right'>
-                <a href='#'>Play</a>
-                <a href='#'><i><FaCheck/></i>Follow</a>
+                <a href='#' onClick={play}>Play</a>
+                <a href='#' className='play'><i><FaCheck/></i>Follow</a>
              </div>
         </div>
       </div>

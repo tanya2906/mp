@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 import {FaHeadphones,FaClock,FaRegHeart,FaHeart} from 'react-icons/fa';
 import {Songs} from './Songs';
 import { MusicPlayer } from './MusicPlayer';
-function AudioList({searchvalue,pageName,playlist}) {
+import { type } from '@testing-library/user-event/dist/type';
+function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
     
     const [songs,setSongs]=useState(Songs);
     const [like,setLike]=useState(Songs[0].favourite);
@@ -11,6 +12,8 @@ function AudioList({searchvalue,pageName,playlist}) {
     const [img,setImg]=useState(Songs[0].imgSrc)
     const [id,setId]=useState(Songs[0].id)
     const [play,setPlay]=useState(false);
+   // const [flag,setflag]=useState(0);
+
     useEffect(()=>{
         const song_item=document.querySelectorAll('.audio-list .song-container .song-item');
         function changeActiveSong(){
@@ -21,6 +24,23 @@ function AudioList({searchvalue,pageName,playlist}) {
         }
         song_item.forEach(e=>e.addEventListener('click',changeActiveSong));
     },[]);
+    /*useEffect(()=>{
+        if(type=='popular')
+        {
+            //console.log('popular')
+            setSongs(
+
+            )
+        }
+        else if (type == "like")
+        {
+            console.log('like')
+        }
+        else{
+            console.log('all');
+        }
+    },[type])
+    */
     useEffect(
         ()=>{
             setSongs(
@@ -39,19 +59,30 @@ function AudioList({searchvalue,pageName,playlist}) {
             //console.log(songs)
         },[searchvalue]);
     useEffect(()=>{
-        setSongs(
-            Songs.filter((e)=>{if(e.category.toLowerCase().includes(playlist.toLowerCase()))
-               return e;
-            })
-            
-        )
+        if(type=='like'){
+            setSongs(
+                Songs.filter((e)=>{if(e.category.toLowerCase().includes(playlist.toLowerCase())&& e.favourite===true)
+                   return e;
+                })
+                
+            )
+        }
+        else{
+            setSongs(
+                Songs.filter((e)=>{if(e.category.toLowerCase().includes(playlist.toLowerCase())&& e.category.toLowerCase().includes(type.toLowerCase()))
+                   return e;
+                })
+                
+            )
+        }
+        
         if(songs!=''){
             setLike(songs[0].favourite);
             setSong(songs[0].song);
             setImg(songs[0].imgSrc);
             setId(songs[0].id);
         }
-    },[playlist]);
+    },[playlist,type]);
     
     const changeFavourite=(id)=>{
         Songs.forEach(e=>{
@@ -67,10 +98,10 @@ function AudioList({searchvalue,pageName,playlist}) {
         setSong(songSrc);
         setLike(songlike);
         setId(songId);
-        
+        setflag(1);
     }
     const NEXT=()=>{
-        if(id===songs.length ){
+        if(id===songs.length || songs.length===1){
             setId(1);
         }
         else{
@@ -80,7 +111,6 @@ function AudioList({searchvalue,pageName,playlist}) {
         setImg(songs[id-1].imgSrc);
         setSong(songs[id-1].song);
         setLike(songs[id-1].favourite);
-        
     }
     const PREVIOUS=()=>{
         if(id===1){
@@ -94,6 +124,7 @@ function AudioList({searchvalue,pageName,playlist}) {
         setLike(songs[id-1].favourite);
         
     }
+    //const playAll=()=>{}
   return (
     <div className='audio-list'>
       <div className='the-list'>
@@ -117,6 +148,7 @@ function AudioList({searchvalue,pageName,playlist}) {
                     </div>
                     */}
                     <div className='div3'>
+                        {/*
                         <span>
                             <i><FaHeadphones/></i>
                             <p>1234567890</p>
@@ -124,7 +156,9 @@ function AudioList({searchvalue,pageName,playlist}) {
                         <span>
                             <i><FaClock/></i>
                             <p>03:04</p>
+
                         </span>
+                        */}
                         <i className='like' onClick={()=>changeFavourite(e.id)}>
                         {
                             e.favourite?<FaHeart/>:<FaRegHeart/>
@@ -137,7 +171,7 @@ function AudioList({searchvalue,pageName,playlist}) {
         
        
       </div>
-      <MusicPlayer id={id} setId={setId} song={song} setSong={setSong} img={img} setImg={setImg}like={like} setLike={setLike} setSongs={setSongs} Songs={Songs} play={play} setPlay={setPlay} NEXT={NEXT} PREVIOUS={PREVIOUS}/>
+      <MusicPlayer volume={volume} flag={flag} setflag={setflag} id={id} setId={setId} song={song} setSong={setSong} img={img} setImg={setImg}like={like} setLike={setLike} setSongs={setSongs} Songs={Songs} play={play} setPlay={setPlay} NEXT={NEXT} PREVIOUS={PREVIOUS} />
     </div>
   )
 }
