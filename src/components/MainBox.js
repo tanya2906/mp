@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import '../components/MainBox.css';
 import { BannerBox } from './BannerBox';
-import {FaEye,FaHeart,FaShareAlt,FaPlay,FaPause,FaForward,FaStepForward,FaBackward,FaStepBackward} from 'react-icons/fa';
+//import {FaEye,FaHeart,FaShareAlt,FaPlay,FaPause,FaForward,FaStepForward,FaBackward,FaStepBackward} from 'react-icons/fa';
 import { AudioList } from './AudioList';
 function MainBox({volume,playlist,pageName,searchvalue,artist,setArtist}) {
   const [flag,setflag]=useState(0);

@@ -266,26 +266,26 @@ const Songs = [
         id: ,
         favourite: false,
         songName: "Elevated",
-        artist: "",
+        artist: "Shubh",
         song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FElevated.mp3?alt=media&token=b838d210-d3d4-4319-bda6-43d527059cce",
-        imgSrc:"",
-        category:""
+        imgSrc:"https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/images%2FShubh.jpg?alt=media&token=71926bff-9ddc-404a-be45-1bd5e520e38b",
+        category:"punjabi "
       },{
         id: ,
         favourite: false,
         songName: "Excuses",
-        artist: "",
-        song: "",
+        artist: "AP Dillon",
+        song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/images%2FAP%20Dhillon.jpg?alt=media&token=e93a9a4c-96b8-4a70-9110-c5f32ee0d110",
         imgSrc:"https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FExcuses.mp3?alt=media&token=36df8511-f73c-4e45-9e5d-a1743c70f2ec",
-        category:""
+        category:"punjabi"
       },{
         id: ,
         favourite: false,
         songName: "Ghost",
-        artist: "",
+        artist: "Diljit Dosanjh",
         song: "https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/Ringtones%2FGhost.mp3?alt=media&token=d06d3047-d7a1-45d6-b82c-a2f5dbaeb909",
-        imgSrc:"",
-        category:""
+        imgSrc:"https://firebasestorage.googleapis.com/v0/b/musicplayer-2906.appspot.com/o/images%2FDiljit%20Dosanjh.jpg?alt=media&token=18359aa1-c612-40a7-9420-ebc9689a2029",
+        category:"punjabi"
       },{
         id: ,
         favourite: false,

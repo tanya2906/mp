@@ -321,12 +321,14 @@ audio{
 }
 .main-box .playing-song .playing-song-detail .bottom input{
     width: 80%;
+   /* width: calc(100% - 20px);*/
     cursor: pointer;
     appearance: none;
     border-radius: 5px;
     height: 2px;
     background: rgba(255,255,255,0.1);
     position: relative;
+    
 }
 .main-box .playing-song .playing-song-detail .bottom input:before{
     content: " ";
@@ -336,18 +338,19 @@ audio{
     left: 0;
     height: 100%;
     width: var(--player-played);
+    max-width: 100%;
     border-radius: 5px;
     z-index: 2;
-    transition: width 250ms linear;
+    transition: width 0.3s linear;/*width*/
 }
 .main-box .playing-song .playing-song-detail .bottom input::-webkit-slider-thumb{
     -webkit-appearance: none;
-    /*background: #848484;*/
+    background: #848484;
     height: 10px;
     width: 4px;
     z-index: 3;
     position: relative;
-    transition: all 250ms linear;
+    transition: all 0.3s linear;
     
 }
 @media only screen and (max-width:900px){

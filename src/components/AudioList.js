@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
-import {FaHeadphones,FaClock,FaRegHeart,FaHeart} from 'react-icons/fa';
+import {FaRegHeart,FaHeart} from 'react-icons/fa';
 import {Songs} from './Songs';
 import { MusicPlayer } from './MusicPlayer';
-import { type } from '@testing-library/user-event/dist/type';
-function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
+
+function AudioList({volume,type,searchvalue,playlist,flag ,setflag}) {
     
     const [songs,setSongs]=useState(Songs);
     const [like,setLike]=useState(Songs[0].favourite);
@@ -12,6 +12,7 @@ function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
     const [img,setImg]=useState(Songs[0].imgSrc)
     const [id,setId]=useState(Songs[0].id)
     const [play,setPlay]=useState(false);
+    const [i,setI]=useState(0)
    // const [flag,setflag]=useState(0);
 
     useEffect(()=>{
@@ -50,12 +51,14 @@ function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
                 }
                 })
             )
-            if(songs!=''){
-                setLike(songs[0].favourite);
+           // if(songs!=''){
+            //    setMainSong(songs[0].imgSrc,songs[0].song,songs[0].favourite,songs[0].id,0,0);
+                /*setLike(songs[0].favourite);
                 setSong(songs[0].song);
                 setImg(songs[0].imgSrc);
                 setId(songs[0].id);
-            }
+                */
+           // }
             //console.log(songs)
         },[searchvalue]);
     useEffect(()=>{
@@ -76,12 +79,15 @@ function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
             )
         }
         
-        if(songs!=''){
-            setLike(songs[0].favourite);
-            setSong(songs[0].song);
-            setImg(songs[0].imgSrc);
-            setId(songs[0].id);
+       /* if(songs!=''){
+            
+            setMainSong(songs[0].imgSrc,songs[0].song,songs[0].favourite,songs[0].id,0,0);
+           // setLike(songs[0].favourite);
+           // setSong(songs[0].song);
+           // setImg(songs[0].imgSrc);
+           // setId(songs[0].id);
         }
+        */
     },[playlist,type]);
     
     const changeFavourite=(id)=>{
@@ -93,15 +99,18 @@ function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
         })
         setSongs([...Songs]);
     }
-    const setMainSong=(songImg,songSrc,songlike,songId)=>{
+    const setMainSong=(songImg,songSrc,songlike,songId,j,i)=>{
         setImg(songImg);
         setSong(songSrc);
         setLike(songlike);
         setId(songId);
-        setflag(1);
+        setflag(j);
+        setI(i);
+        
     }
-    const NEXT=()=>{
-        if(id===songs.length || songs.length===1){
+    /*const NEXT=()=>{
+        if(id===songs.length || songs.length===1)
+        {
             setId(1);
         }
         else{
@@ -112,6 +121,26 @@ function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
         setSong(songs[id-1].song);
         setLike(songs[id-1].favourite);
     }
+    */const NEXT=()=>{
+        if(i===songs.length-1 || songs.length===1)
+        {
+            setI(0);
+        }
+        else{
+            setI(i+1);
+            
+        }
+        setImg(songs[i].imgSrc);
+        setSong(songs[i].song);
+        setLike(songs[i].favourite);
+        if(play){
+            setflag(1);
+        }
+        else{
+            setflag(0);
+        }
+    }
+    /*
     const PREVIOUS=()=>{
         if(id===1){
             setId(songs.length);
@@ -122,6 +151,18 @@ function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
         setImg(songs[id-1].imgSrc);
         setSong(songs[id-1].song);
         setLike(songs[id-1].favourite);
+        
+    }*/
+    const PREVIOUS=()=>{
+        if(i===0){
+            setI(songs.length-1);
+        }
+        else{
+            setI(i-1);
+        }
+        setImg(songs[i].imgSrc);
+        setSong(songs[i].song);
+        setLike(songs[i].favourite);
         
     }
     //const playAll=()=>{}
@@ -136,7 +177,7 @@ function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
         
             
             songs.map((e,i)=>(
-                <div className='song-item' key={e.id} onClick={()=>setMainSong(e.imgSrc,e.song,e.favourite,e.id)}>
+                <div className='song-item' key={e.id} onClick={()=>setMainSong(e.imgSrc,e.song,e.favourite,e.id,1,i)}>
                     <div className='div1'>
                         <p>{`#${i+1}`}</p>
                         <img src={e.imgSrc} alt="" />
@@ -171,7 +212,7 @@ function AudioList({volume,type,searchvalue,pageName,playlist,flag ,setflag}) {
         
        
       </div>
-      <MusicPlayer volume={volume} flag={flag} setflag={setflag} id={id} setId={setId} song={song} setSong={setSong} img={img} setImg={setImg}like={like} setLike={setLike} setSongs={setSongs} Songs={Songs} play={play} setPlay={setPlay} NEXT={NEXT} PREVIOUS={PREVIOUS} />
+      <MusicPlayer volume={volume} flag={flag} setflag={setflag}  id={id} setId={setId} song={song} setSong={setSong} img={img} setImg={setImg}like={like} setLike={setLike} setSongs={setSongs} Songs={Songs} play={play} setPlay={setPlay} NEXT={NEXT} PREVIOUS={PREVIOUS} />
     </div>
   )
 }

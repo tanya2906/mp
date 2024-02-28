@@ -1,10 +1,21 @@
 .right-box{
     background-color: rgb(20, 20, 20);
-    height:  100vh;
+    height:  calc(100vh - 60px);
     width: 100px;
     min-width: 100px;
     border-left: 1px solid rgb(29, 29, 29);
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px;
+
+}
+.right-box i{
+    height: 24px;
+    width: 24px;
 }
 @media only screen and (max-width:450px){
     .right-box{
