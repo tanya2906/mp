@@ -31,9 +31,9 @@ function MusicPlayer({volume,setflag,flag,play,setPlay,id,setId,song,setSong,img
         setPlay(true);
         //play_pause.current=requestAnimationFrame(whilePlaying);
       }
-      console.log(volume)
+      //console.log(volume)
       audioPlayer.current.volume=volume;
-      console.log(audioPlayer.current.volume)
+      //console.log(audioPlayer.current.volume)
     },[audioPlayer?.current?.loadedmetada, audioPlayer?.current?.readyState,flag,volume]);
    
     const whilePlaying=()=>{
